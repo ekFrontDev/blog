@@ -2,19 +2,20 @@ import classes from './modal-pop-up.module.scss'
 import { showPopUp, deleteArticleItem } from '../../store/blog-slice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { AppDispatch } from '../../store'
 
 function ModalPopUp({ slugID }) {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const deleteArticle = () => {
-    dispatch(deleteArticleItem(slugID))
-      .then(() => {
-        navigate('/')
-      })
-      .catch((e) => {
-        alert(e)
-      })
+  const dispatch = useDispatch<AppDispatch>()
+  const deleteArticle = async () => {
+    try {
+      await dispatch(deleteArticleItem(slugID)).unwrap()
+      navigate('/')
+    } catch (e) {
+      alert(e)
+    }
   }
+
   return (
     <div className={classes.wrapper}>
       <div className={classes['pop-up-question']}>

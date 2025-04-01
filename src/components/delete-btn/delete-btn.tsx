@@ -1,9 +1,10 @@
 import classes from './delete-btn.module.scss'
 import { showPopUp } from '../../store/blog-slice'
 import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store'
 
 function DeleteBtn() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   return (
     <button
       className={classes['delete-btn']}

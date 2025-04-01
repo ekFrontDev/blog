@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { authorization } from '../../store/blog-slice'
 import classes from '../sign-up-form/sign-up-form.module.scss'
+import { RootState, AppDispatch } from '../../store'
 
 function SignInForm() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
-  const { status } = useSelector((state) => state.blog)
+  const { status } = useSelector((state: RootState) => state.blog)
 
   const {
     register,
@@ -28,6 +29,7 @@ function SignInForm() {
       if (result.user.token) {
         navigate('/')
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError('email', { message: 'Invalid email or password' })
       setError('password', { message: 'Invalid email or password' })

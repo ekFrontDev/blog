@@ -6,9 +6,10 @@ import LogOut from '../log-out-btn/log-out-btn'
 import ProfileItemHeader from '../profile-item-header/profile-item-header'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 function HeaderMenu() {
-  const dataArticles = useSelector((state) => state.blog)
+  const dataArticles = useSelector((state: RootState) => state.blog)
   const { username, avatarImage, token, isLoggedIn } = dataArticles
   return (
     <header className={classes.header}>

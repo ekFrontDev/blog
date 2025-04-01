@@ -3,20 +3,33 @@ import classes from './article-preview-item.module.scss'
 import { useDispatch } from 'react-redux'
 import { getArticle } from '../../store/blog-slice'
 import { Link } from 'react-router-dom'
+import { AppDispatch } from '../../store'
+
+interface ArticlePreviewItemProps {
+  title: string
+  likes: number
+  tagList: string[]
+  body: string
+  slugInfo: string
+  data: string
+  user: string
+  imagePath: string
+  description: string
+  favoritedInfo: boolean
+}
 
 function ArticlePreviewItem({
   title,
   likes,
   tagList,
-  body,
   slugInfo,
   data,
   user,
   imagePath,
   description,
   favoritedInfo,
-}) {
-  const dispatch = useDispatch()
+}: ArticlePreviewItemProps) {
+  const dispatch = useDispatch<AppDispatch>()
   const elementsTag =
     tagList && tagList.length > 0
       ? tagList.map((el) => {

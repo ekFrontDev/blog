@@ -1,9 +1,10 @@
 import ArticlePreviewItem from '../article-preview-item/article-preview-item'
 import PaginationItem from '../pagination/pagination'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 function ArticleList() {
-  const totalData = useSelector((store) => store.blog)
+  const totalData = useSelector((store: RootState) => store.blog)
   const { dataArticles } = totalData
 
   const elements = dataArticles.map((el) => {

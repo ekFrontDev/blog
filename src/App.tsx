@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getArticles, checkToken } from './store/blog-slice'
 import { Routes, Route } from 'react-router-dom'
+import { RootState, AppDispatch } from './store'
 import SignUpForm from './components/sign-up-form/sign-up-form'
 import SignInForm from './components/sign-in-form/sign-in-form'
 import ArticleItemCard from './components/article-item-card/article-item-card'
@@ -14,10 +15,10 @@ import Layout from './components/layout/layuot'
 import './App.module.scss'
 
 function App() {
-  const totalData = useSelector((store) => store.blog)
+  const totalData = useSelector((store: RootState) => store.blog)
   const { dataArticles, status } = totalData
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
     dispatch(getArticles())

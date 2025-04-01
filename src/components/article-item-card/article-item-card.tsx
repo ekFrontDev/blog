@@ -13,11 +13,12 @@ import {
 } from '../../store/blog-slice'
 import { useParams } from 'react-router-dom'
 import SpinItem from '../spin-item/spin-item'
+import { RootState, AppDispatch } from '../../store'
 
 function ArticleItemCard() {
-  const dataArticles = useSelector((store) => store.blog)
+  const dataArticles = useSelector((store: RootState) => store.blog)
   const { username, popUp, likes, token, status } = dataArticles
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const { slug } = useParams()
   const {
     title,
@@ -40,6 +41,7 @@ function ArticleItemCard() {
   const imageProfile = author ? author.image : null
   const likeStatus = likes ? 'likes-active' : 'likes'
   const functionChangeLikesStatus = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !likes
       ? dispatch(likeStatusFavorited(slug))
       : dispatch(likeStatusUnfavorited(slug))

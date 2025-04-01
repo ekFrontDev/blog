@@ -2,7 +2,7 @@ import classes from './profile-item-header.module.scss'
 import { Link } from 'react-router-dom'
 
 function ProfileItemHeader({ user, imagePath }) {
-  const pathImage = '../../src/assets/profile.svg'
+  const pathImage = '/profile.svg'
   return (
     <div className={classes['wrapper-profile-item']}>
       <div className={classes['wrapper-profile-info']}>

@@ -4,10 +4,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import TagList from '../tag-list/tag-list'
 import { createArticleForm, editArticleItem } from '../../store/blog-slice'
+import { RootState, AppDispatch } from '../../store'
 
 function ArticleFormEdit() {
-  const dataArticles = useSelector((store) => store.blog)
-  const dispatch = useDispatch()
+  const dataArticles = useSelector((store: RootState) => store.blog)
+  const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   const { articleForm } = dataArticles
   const { title, body, description, tagList, slug } = dataArticles.openArticle
@@ -21,12 +22,15 @@ function ArticleFormEdit() {
     dispatch(createArticleForm({ title, description, body, tagList }))
   }, [title, description, body, tagList, dispatch])
 
-  const editArticle = (evt) => {
+  const editArticle = async (evt: React.FormEvent) => {
     evt.preventDefault()
     const obj = { id: slug, editForm: articleForm }
-    dispatch(editArticleItem(obj))
-      .then(() => navigate('/'))
-      .catch((e) => alert(e))
+    try {
+      await dispatch(editArticleItem(obj)).unwrap()
+      navigate('/')
+    } catch (e) {
+      alert(e)
+    }
   }
 
   return (

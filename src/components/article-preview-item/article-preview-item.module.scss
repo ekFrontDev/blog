@@ -47,7 +47,7 @@ h4 {
 }
 
 .likes::before {
-  content: url('../../src/assets/heart.svg');
+  content: url('/heart.svg');
   position: absolute;
   right: 13px;
 }
@@ -58,7 +58,7 @@ h4 {
 }
 
 .likes-active::before {
-  content: url('../../src/assets/redHeart.svg');
+  content: url('/redHeart.svg');
   position: absolute;
   right: 19px;
 }

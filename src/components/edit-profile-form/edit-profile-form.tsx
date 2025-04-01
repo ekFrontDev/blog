@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateCurrentUser } from '../../store/blog-slice'
 import { useNavigate } from 'react-router-dom'
 import classes from '../sign-up-form/sign-up-form.module.scss'
+import { RootState, AppDispatch } from '../../store'
 
 function EditProfileForm() {
   const { username, email, avatarImage, status } = useSelector(
-    (state) => state.blog,
+    (state: RootState) => state.blog,
   )
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
 
   const {

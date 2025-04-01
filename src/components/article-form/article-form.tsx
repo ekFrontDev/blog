@@ -4,16 +4,21 @@ import TagList from '../tag-list/tag-list'
 import { createArticleForm, createArticle } from '../../store/blog-slice'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { RootState, AppDispatch } from '../../store'
 
 function ArticleForm() {
   const navigate = useNavigate()
-  const dataArticles = useSelector((state) => state.blog)
-  const dispatch = useDispatch()
-  const sendArticleForm = (evt) => {
+  const dataArticles = useSelector((state: RootState) => state.blog)
+  const dispatch = useDispatch<AppDispatch>()
+
+  const sendArticleForm = async (evt: React.FormEvent) => {
     evt.preventDefault()
-    dispatch(createArticle(dataArticles.articleForm))
-      .then(() => navigate('/'))
-      .catch((e) => alert(e))
+    try {
+      await dispatch(createArticle(dataArticles.articleForm)).unwrap()
+      navigate('/')
+    } catch (e) {
+      alert(e)
+    }
   }
 
   const functionValueArticleForm = (evt) => {

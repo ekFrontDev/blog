@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { userRegistration } from '../../store/blog-slice'
+import { RootState, AppDispatch } from '../../store'
 
 function SignUpForm() {
-  const dataArticles = useSelector((state) => state.blog)
+  const dataArticles = useSelector((state: RootState) => state.blog)
   const { status } = dataArticles
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
 
   const {
@@ -28,7 +29,7 @@ function SignUpForm() {
   })
 
   const onSubmit = async (data) => {
-    const { agree, repeatPassword, ...formData } = data
+    const { ...formData } = data
     try {
       const result = await dispatch(userRegistration(formData)).unwrap()
       if (result.user.token) {

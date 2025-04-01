@@ -4,17 +4,18 @@ import AddTagBtn from '../add-tag-btn/add-tag-btn'
 import { useDispatch } from 'react-redux'
 import { createArticleFormTags } from '../../store/blog-slice'
 import { useState } from 'react'
+import { AppDispatch } from '../../store'
 
 export default function TagList() {
   const [tag, setTag] = useState('')
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const handleChange = (evt) => {
     setTag('')
     setTag(evt.target.value)
   }
   const handleAddTag = () => {
     if (tag.trim()) {
-      dispatch(createArticleFormTags([tag.trim()]))
+      dispatch(createArticleFormTags(tag.trim()))
       setTag('')
     }
   }
