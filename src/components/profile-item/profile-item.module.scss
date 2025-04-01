@@ -1,0 +1,31 @@
+.wrapper-profile-item {
+  display: flex;
+}
+
+.wrapper-profile-name {
+  margin-right: 13px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.wrapper-profile-name-header {
+  margin-top: 30px;
+}
+
+.wrapper-profile-img {
+  margin: auto 0;
+}
+
+.wrapper-profile-img img {
+  border-radius: 50%;
+}
+
+.wrapper-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}

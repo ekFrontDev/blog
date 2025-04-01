@@ -1,0 +1,32 @@
+$button-color: rgba(0, 0, 0, 0.75);
+.log-out-btn {
+  width: 109px;
+  height: 51px;
+  border: 1px solid $button-color;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  font-size: 18px;
+  color: $button-color;
+  margin: auto 22px auto 25px;
+  transition: 0.12s;
+}
+
+.link {
+  color: $button-color;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.log-out-btn:hover {
+  background-color: $button-color;
+  color: white;
+  box-shadow: 0 0 15px 3px $button-color;
+}
+
+.link:hover {
+  color: white;
+}
+
+.log-out-btn:active {
+  transform: scale(0.95);
+}

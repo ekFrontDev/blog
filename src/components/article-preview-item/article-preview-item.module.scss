@@ -1,0 +1,86 @@
+$color-wrapper: white;
+$wrapper-form-shadow: rgb(180, 180, 180);
+$color-title: rgba(24, 144, 255, 1);
+
+.wrapper {
+  width: 70rem;
+  height: 100%;
+  background-color: $color-wrapper;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3px;
+  box-shadow: 0 0 25px 1px $wrapper-form-shadow;
+  padding: 15px 14px;
+  transition: 0.3s;
+}
+
+.wrapper:hover {
+  box-shadow: 0px 0 25px 8px $wrapper-form-shadow;
+  transform: scale(1.013);
+}
+
+.wrapper-article-title {
+  display: flex;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 0 13px 4px 0;
+  color: $color-title;
+  font-weight: 400;
+}
+
+.tags {
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+.likes {
+  margin: auto 0 auto 18px;
+  position: relative;
+}
+
+.likes::before {
+  content: url('../../src/assets/heart.svg');
+  position: absolute;
+  right: 13px;
+}
+
+.likes-active {
+  margin: auto 0 auto 28px;
+  position: relative;
+}
+
+.likes-active::before {
+  content: url('../../src/assets/redHeart.svg');
+  position: absolute;
+  right: 19px;
+}
+
+.wrapper-article {
+  width: 682px;
+}
+
+.article-preview-txt {
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 22px;
+  font-weight: 300;
+}
+.profile {
+  padding-bottom: 15px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 72rem;
+  margin: 0 auto;
+}

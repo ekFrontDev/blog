@@ -1,0 +1,32 @@
+$button-color: rgba(82, 196, 26, 1);
+.create-article-btn {
+  width: 130px;
+  height: 31px;
+  border: 1px solid $button-color;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  font-size: 18px;
+  color: $button-color;
+  margin: auto 25px auto auto;
+  transition: 0.12s;
+}
+
+.link {
+  color: $button-color;
+  text-decoration: none;
+  padding: 5px 4px 5px 4px;
+}
+
+.create-article-btn:hover {
+  background-color: $button-color;
+  color: white;
+  box-shadow: 0 0 15px 3px $button-color;
+}
+
+.link:hover {
+  color: white;
+}
+
+.create-article-btn:active {
+  transform: scale(0.95);
+}

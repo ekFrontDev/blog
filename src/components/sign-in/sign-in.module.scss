@@ -1,0 +1,23 @@
+$button-color: rgba(255, 255, 255, 0);
+.sign-in-btn {
+  height: 51px;
+  width: 84px;
+  font-size: 18px;
+  border: none;
+  background-color: $button-color;
+  margin: auto 19px auto 0;
+  transition: 0.12s;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.sign-in-btn:hover {
+  text-decoration: underline;
+}
+
+.sign-in-btn:active {
+  transform: scale(0.95);
+}

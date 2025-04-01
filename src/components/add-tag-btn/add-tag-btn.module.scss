@@ -1,0 +1,23 @@
+$color-border-radius: rgba(24, 144, 255, 1);
+
+.add-btn {
+  width: 136px;
+  height: 40px;
+  border-radius: 3px;
+  color: $color-border-radius;
+  font-size: 14px;
+  border: 1px solid $color-border-radius;
+  background-color: white;
+  transition: 0.1s;
+  margin: 5px 17px 0 17px;
+}
+
+.add-btn:hover {
+  background-color: $color-border-radius;
+  color: white;
+  box-shadow: 0 0 7px 1px $color-border-radius;
+}
+
+.add-btn:active {
+  transform: scale(0.95);
+}

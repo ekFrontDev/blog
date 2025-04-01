@@ -1,0 +1,154 @@
+$color-form: white;
+$color-form-shadow: rgb(180, 180, 180);
+$color-border-input: rgba(217, 217, 217, 1);
+$color-btn: rgba(24, 144, 255, 1);
+$color-checkbox-txt: rgba(89, 89, 89, 1);
+
+.wrapper-sign-up-form {
+  width: 384px;
+  height: 100%;
+  background-color: $color-form;
+  margin: 59px auto 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 1px $color-form-shadow;
+}
+
+.wrapper-sign-in-form {
+  width: 384px;
+  height: 374px;
+  background-color: $color-form;
+  margin: 59px auto 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 1px $color-form-shadow;
+}
+
+.wrapper-edit-form {
+  width: 384px;
+  height: 510px;
+  background-color: $color-form;
+  margin: 59px auto 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 1px $color-form-shadow;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-acc {
+  margin: 36px auto 10px auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.label-info {
+  margin: 0 0 6px 36px;
+}
+
+.input-info {
+  width: 286px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid $color-border-input;
+  font-size: 16px;
+  padding: 8px 12px 8px 12px;
+  margin: 0 0 16px 36px;
+  outline: none;
+}
+
+.input-info-not-match {
+  border: 1px solid red;
+  margin: 0 0 4px 36px;
+}
+
+.input-info-red {
+  width: 286px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid red;
+  color: red;
+  font-size: 16px;
+  padding: 8px 12px 8px 12px;
+  margin: 0 0 16px 36px;
+  outline: none;
+}
+
+.input-errors {
+  position: relative;
+  top: -10px;
+  color: rgb(255, 73, 73);
+  margin-left: 36px;
+  font-size: 14px;
+}
+
+.checkbox-wrapper {
+  width: 310px;
+  height: 50px;
+  margin: 0 0 0 36px;
+  display: flex;
+  border-top: 1px solid $color-border-input;
+  padding-top: 10px;
+}
+
+.checkbox-input {
+  margin: 0;
+  padding: 10px 0 0 0;
+  width: 16px;
+  height: 22px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  display: block;
+  margin-left: 8px;
+  //   padding-top: 10px;
+  color: $color-checkbox-txt;
+}
+
+.button-create {
+  width: 310px;
+  height: 40px;
+  background-color: $color-btn;
+  border: 0px;
+  border-radius: 4px;
+  margin: 0 0 20px 36px;
+  font-size: 16px;
+  color: $color-form;
+  transition: 0.12s;
+}
+
+.button-create:hover {
+  box-shadow: 0 0 15px 1px $color-btn;
+}
+
+.button-create:active {
+  transform: scale(0.95);
+}
+
+.have-acc {
+  font-size: 12px;
+  color: $color-checkbox-txt;
+  margin: 0 auto 20px auto;
+}
+
+.have-acc-src {
+  color: $color-btn;
+}
+
+.have-acc-src:hover {
+  text-decoration: underline;
+}
+
+.sign-up-path {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 0;
+  color: rgb(24, 144, 255);
+}
+
+.sign-up-path:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

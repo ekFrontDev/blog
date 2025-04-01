@@ -1,0 +1,23 @@
+$color-edit: rgba(82, 196, 26, 1);
+
+.edit-btn {
+  width: 65px;
+  height: 31px;
+  border-radius: 3px;
+  color: $color-edit;
+  font-size: 14px;
+  border: 1px solid $color-edit;
+  background-color: white;
+  transition: 0.1s;
+  margin-left: 12px;
+}
+
+.edit-btn:hover {
+  background-color: $color-edit;
+  color: white;
+  box-shadow: 0 0 7px 1px $color-edit;
+}
+
+.edit-btn:active {
+  transform: scale(0.95);
+}

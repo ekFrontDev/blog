@@ -1,0 +1,22 @@
+$color-border-radius: rgba(245, 34, 45, 1);
+
+.delete-btn {
+  width: 120px;
+  height: 40px;
+  border-radius: 3px;
+  color: $color-border-radius;
+  font-size: 14px;
+  border: 1px solid $color-border-radius;
+  background-color: white;
+  transition: 0.1s;
+}
+
+.delete-btn:hover {
+  background-color: $color-border-radius;
+  color: white;
+  box-shadow: 0 0 7px 1px $color-border-radius;
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
