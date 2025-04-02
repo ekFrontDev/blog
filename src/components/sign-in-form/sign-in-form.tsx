@@ -82,6 +82,18 @@ function SignInForm() {
         >
           Login
         </button>
+
+        <span className={classes['have-acc']}>
+          Don't have an account?{' '}
+          <a className={classes['have-acc-src']}>
+            <button
+              className={classes['sign-up-path']}
+              onClick={() => navigate('/signup')}
+            >
+              Sign Up.
+            </button>
+          </a>
+        </span>
       </form>
     </div>
   )
