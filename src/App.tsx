@@ -28,6 +28,10 @@ function App() {
     dispatch(checkToken())
   }, [])
 
+  //   useEffect(() => {
+  //     dispatch(GetTicketsPage(paginationPage))
+  //   }, [paginationPage, dispatch])
+
   return (
     <>
       <Routes>

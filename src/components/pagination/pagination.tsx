@@ -10,9 +10,12 @@ function PaginationItem() {
   const { paginationPage } = dataArticles
 
   const dispatch = useDispatch<AppDispatch>()
+  const pageNumber = localStorage.getItem('page')
+    ? localStorage.getItem('page')
+    : paginationPage
 
   useEffect(() => {
-    dispatch(GetTicketsPage(paginationPage))
+    dispatch(GetTicketsPage(Number(pageNumber)))
   }, [paginationPage, dispatch])
 
   const changePage = async (pageNumber) => {
