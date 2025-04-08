@@ -51,6 +51,7 @@ interface BlogState {
     tagList: string[]
   }
   likes: boolean
+  paginationPage: number
 }
 
 const initialState: BlogState = {
@@ -74,6 +75,7 @@ const initialState: BlogState = {
   popUp: false,
   articleForm: { title: '', description: '', body: '', tagList: [] },
   likes: false,
+  paginationPage: 1,
 }
 
 interface EditArticleForm {
@@ -162,10 +164,14 @@ export const getArticles = createAsyncThunk<
 export const GetTicketsPage = createAsyncThunk<
   ArticlesResponse,
   number,
+  //   BlogState,
   { rejectValue: string }
 >(
   'blog/GetTicketsPage',
-  async function (pageNumber: number, { rejectWithValue }) {
+  //   async function (pageNumber: number, { rejectWithValue }) {
+  async function (page, { rejectWithValue }) {
+    //  console.log(page)
+    const pageNumber = page === 1 ? page : Number(localStorage.getItem('page'))
     try {
       const res = await fetch(
         `https://blog-platform.kata.academy/api/articles?limit=5&offset=${pageNumber * 5 - 5}`,
@@ -564,6 +570,11 @@ export const blogSlice = createSlice({
     changeLikesStatus: (state) => {
       state.likes = !state.likes
     },
+    changePaginationPage: (state, action: PayloadAction<number>) => {
+      console.log(action.payload)
+      state.paginationPage = action.payload
+      localStorage.setItem('page', String(action.payload))
+    },
     //весь функционал экшэнов
   },
   extraReducers: (builder) => {
@@ -781,6 +792,7 @@ export const {
   createArticleForm,
   createArticleFormTags,
   changeLikesStatus,
+  changePaginationPage,
 } = blogSlice.actions
 
 export default blogSlice.reducer

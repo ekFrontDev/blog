@@ -48,3 +48,11 @@ $color-border-input: rgba(217, 217, 217, 1);
   width: 274px;
   margin: 0 17px 5px 36px;
 }
+
+.input-errors {
+  position: relative;
+  top: -10px;
+  color: rgb(255, 73, 73);
+  margin-left: 36px;
+  font-size: 14px;
+}
