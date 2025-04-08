@@ -27,8 +27,8 @@ function ArticleForm() {
     },
   })
   //   evt: React.FormEvent
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const sendArticleForm = async (data) => {
+
+  const sendArticleForm = async () => {
     //  evt.preventDefault()
     try {
       await dispatch(createArticle(dataArticles.articleForm)).unwrap()
